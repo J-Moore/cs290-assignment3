@@ -13,6 +13,9 @@
 */
 
 //your code here
+function uselessFunction() {
+    return null;
+}
 
 //end your code
 
@@ -30,6 +33,15 @@ var barType = typeof bar;
 */
 
 //your code here
+
+bar = function(doubleArray) {
+    for (var i = 0; i < doubleArray.length; i++) {
+        if (isNaN(doubleArray[i]) === true)
+            return false;
+        doubleArray[i] *= 2;
+    }
+    return true;
+};
 
 //end your code
 
@@ -65,6 +77,15 @@ function GitLog(hash, date, message) {
 * @return {array.<GitLog>} - return an array GitLog instances
 */
 
-//your code here
+/*your code here
+function parseGit (logArray) {
+    var reSpace = /\s/;
+    var log = new 
+    
+    for (var i = 0; i < logArray.length; i++) {
 
-//end your code
+        var arrayWords = reSpace.exec(logArray[i]);
+        arrayWords[0]
+}
+
+*/end your code
