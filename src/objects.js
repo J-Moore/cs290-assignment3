@@ -10,7 +10,10 @@
 
 function returnObjectLiteral() {
   //your code here
-  return {type: 'Goldfish', brand: 'Pepperidge Farm', flavor: 'Cheddar', count: 2000}; //Modify ONLY this line
+    return {type: 'Goldfish',
+            brand: 'Pepperidge Farm',
+            flavor: 'Cheddar',
+            count: 2000}; //Modify ONLY this line
   //end your code
 }
 
@@ -40,45 +43,44 @@ function returnObjectLiteral() {
 //your code here
 function MessageLog(user) {
     this.user = user;
-    this.messages = [];
+    this.sentMsgs = [];
+    this.recdMsgs = [];
+    this.sentCount = 0;
+    this.recdCount = 0;
     
-    this.logMessage = function (msgtext, direction) {
-        var arrayLen = this.messages.length;
-        
-        // If there are already 5 messages, we are shifting down and opening
-        // a spot at the messages[4] location to store the new message.
-        // This eliminates messages[0] from the log.
-        if (arrayLen === 5) {
-            for (var i = 0; i < 4; i++) {
-                this.messages[i] = this.messages[i + 1];
+    this.logMessage = function(messageText, direction) {
+        // log sent messages
+        if (direction === 0) {
+            for (var i = 4; i > 0; i--) {
+                this.sentMsgs[i] = this.sentMsgs[i - 1];
             }
-            this.messages[i] = {msgText: msgtext, msgDir: direction};
-        } else {
-            this.messages[arrayLen] = {msgText: msgtext, msgDir: direction};
+            this.sentMsgs[0] = messageText;
+            this.sentCount++;
         }
+        
+        // log recd messages
+        if (direction === 1) {
+            for (var i = 4; i > 0; i--) {
+                this.recdMsgs[i] = this.recdMsgs[i - 1];
+            }
+            this.recdMsgs[0] = messageText;
+            this.recdCount++;
+        }
+    
     };
     
-    this.getSentMessage = function (n) {
-        return this.messages[n].
+    this.getSentMessage = function(n) {
+        return this.sentMsgs[n];
     };
     
-    this.totalSent = function () {
-        var count = 0;
-        for (var i = 0; i < this.messages.length; i++) {
-            if (this.messages[n]['msgDir'] === 0)
-                count++;
-        }
-        return count;
+    this.totalSent = function() {
+        return this.sentCount;
     };
     
-    this.totalReceived = function () {
-        var count = 0;
-        for (var i = 0; i < this.messages.length; i++) {
-            if (this.messages[n]['msgDir'] === 1)
-                count++;
-        }
-        return count;
+    this.totalReceived = function() {
+        return this.recdCount;
     };
+
 }
 //end your code
 
@@ -88,8 +90,9 @@ function MessageLog(user) {
 * received.
 */
 //your code here
-MessageLog.lastReceivedMessage = function(this)
-
+MessageLog.prototype.lastReceivedMessage = function() {
+    return this.recdMsgs[0];
+}
 //end your code
 
 /**
@@ -99,5 +102,8 @@ MessageLog.lastReceivedMessage = function(this)
 */
 
 //your code here
-
+var myLog = new MessageLog('BlackHatGuy');
+myLog.logMessage('foo', 1);
+myLog.logMessage('bar', 1);
+myLog.logMessage('baz', 1);
 //end your code

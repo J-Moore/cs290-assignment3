@@ -88,4 +88,4 @@ function parseGit (logArray) {
         arrayWords[0]
 }
 
-*/end your code
+end your code*/
