@@ -10,7 +10,7 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  return {type: 'Goldfish', brand: 'Pepperidge Farm', flavor: 'Cheddar', count: 2000}; //Modify ONLY this line
   //end your code
 }
 
@@ -38,7 +38,48 @@ function returnObjectLiteral() {
 */
 
 //your code here
-
+function MessageLog(user) {
+    this.user = user;
+    this.messages = [];
+    
+    this.logMessage = function (msgtext, direction) {
+        var arrayLen = this.messages.length;
+        
+        // If there are already 5 messages, we are shifting down and opening
+        // a spot at the messages[4] location to store the new message.
+        // This eliminates messages[0] from the log.
+        if (arrayLen === 5) {
+            for (var i = 0; i < 4; i++) {
+                this.messages[i] = this.messages[i + 1];
+            }
+            this.messages[i] = {msgText: msgtext, msgDir: direction};
+        } else {
+            this.messages[arrayLen] = {msgText: msgtext, msgDir: direction};
+        }
+    };
+    
+    this.getSentMessage = function (n) {
+        return this.messages[n].
+    };
+    
+    this.totalSent = function () {
+        var count = 0;
+        for (var i = 0; i < this.messages.length; i++) {
+            if (this.messages[n]['msgDir'] === 0)
+                count++;
+        }
+        return count;
+    };
+    
+    this.totalReceived = function () {
+        var count = 0;
+        for (var i = 0; i < this.messages.length; i++) {
+            if (this.messages[n]['msgDir'] === 1)
+                count++;
+        }
+        return count;
+    };
+}
 //end your code
 
 /**
@@ -47,6 +88,7 @@ function returnObjectLiteral() {
 * received.
 */
 //your code here
+MessageLog.lastReceivedMessage = function(this)
 
 //end your code
 
