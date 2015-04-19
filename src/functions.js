@@ -97,7 +97,7 @@ function parseGit(msg) {
         }
 
         msgArray[i] = new GitLog(msg[i].slice(0, j),
-                                 msg[i].slice(j+1, k-1),
+                                 new Date(msg[i].slice(j+1, k-1)),
                                  msg[i].slice(k+1, msg[i].length-1));
         console.log(msgArray[i]);
     }
