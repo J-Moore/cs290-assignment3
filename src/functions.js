@@ -77,15 +77,30 @@ function GitLog(hash, date, message) {
 * @return {array.<GitLog>} - return an array GitLog instances
 */
 
-/*your code here
-function parseGit (logArray) {
-    var reSpace = /\s/;
-    var log = new 
-    
-    for (var i = 0; i < logArray.length; i++) {
+//your code here
+function parseGit(msg) {
+    var msgArray = []
+    var hashBreak;
+    var dateBreak;;
+    for (var i = 0; i < msg.length; i++) {
+        for (var j = 0; j < msg[i].length; j++) {
+            if (msg[i][j] === " ") {
+                hashBreak = j;
+                break;
+            }
+        }
+        for (var k = j; k < msg[i].length; k++) {
+            if (msg[i][k] === '"') {
+                dateBreak = k;
+                break;
+            }
+        }
 
-        var arrayWords = reSpace.exec(logArray[i]);
-        arrayWords[0]
+        msgArray[i] = new GitLog(msg[i].slice(0, j),
+                                 msg[i].slice(j+1, k-1),
+                                 msg[i].slice(k+1, msg[i].length-1));
+        console.log(msgArray[i]);
+    }
+    return msgArray;
 }
-
-end your code*/
+//end your code
