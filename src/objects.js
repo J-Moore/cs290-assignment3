@@ -47,40 +47,39 @@ function MessageLog(user) {
     this.recdMsgs = [];
     this.sentCount = 0;
     this.recdCount = 0;
-    
-    this.logMessage = function(messageText, direction) {
+
+    this.logMessage = function (messageText, direction) {
         // log sent messages
+        var i;
         if (direction === 0) {
-            for (var i = 4; i > 0; i--) {
+            for (i = 4; i > 0; i--) {
                 this.sentMsgs[i] = this.sentMsgs[i - 1];
             }
             this.sentMsgs[0] = messageText;
             this.sentCount++;
         }
-        
+
         // log recd messages
         if (direction === 1) {
-            for (var i = 4; i > 0; i--) {
+            for (i = 4; i > 0; i--) {
                 this.recdMsgs[i] = this.recdMsgs[i - 1];
             }
             this.recdMsgs[0] = messageText;
             this.recdCount++;
         }
-    
-    };
-    
-    this.getSentMessage = function(n) {
-        return this.sentMsgs[n];
-    };
-    
-    this.totalSent = function() {
-        return this.sentCount;
-    };
-    
-    this.totalReceived = function() {
-        return this.recdCount;
     };
 
+    this.getSentMessage = function (n) {
+        return this.sentMsgs[n];
+    };
+
+    this.totalSent = function () {
+        return this.sentCount;
+    };
+
+    this.totalReceived = function () {
+        return this.recdCount;
+    };
 }
 //end your code
 
@@ -90,9 +89,9 @@ function MessageLog(user) {
 * received.
 */
 //your code here
-MessageLog.prototype.lastReceivedMessage = function() {
+MessageLog.prototype.lastReceivedMessage = function () {
     return this.recdMsgs[0];
-}
+};
 //end your code
 
 /**

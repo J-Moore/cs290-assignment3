@@ -33,11 +33,12 @@ var barType = typeof bar;
 */
 
 //your code here
-
-bar = function(doubleArray) {
-    for (var i = 0; i < doubleArray.length; i++) {
-        if (isNaN(doubleArray[i]) === true)
+var bar, i;
+bar = function (doubleArray) {
+    for (i = 0; i < doubleArray.length; i++) {
+        if (isNaN(doubleArray[i]) === true) {
             return false;
+        }
         doubleArray[i] *= 2;
     }
     return true;
@@ -79,26 +80,22 @@ function GitLog(hash, date, message) {
 
 //your code here
 function parseGit(msg) {
-    var msgArray = []
-    var hashBreak;
-    var dateBreak;;
-    for (var i = 0; i < msg.length; i++) {
-        for (var j = 0; j < msg[i].length; j++) {
+    var msgArray = [], i, j, k;
+    for (i = 0; i < msg.length; i++) {
+        for (j = 0; j < msg[i].length; j++) {
             if (msg[i][j] === " ") {
-                hashBreak = j;
                 break;
             }
         }
-        for (var k = j; k < msg[i].length; k++) {
+        for (k = j; k < msg[i].length; k++) {
             if (msg[i][k] === '"') {
-                dateBreak = k;
                 break;
             }
         }
 
         msgArray[i] = new GitLog(msg[i].slice(0, j),
-                                 new Date(msg[i].slice(j+1, k-1)),
-                                 msg[i].slice(k+1, msg[i].length-1));
+                                 new Date(msg[i].slice(j + 1, k - 1)),
+                                 msg[i].slice(k + 1, msg[i].length - 1));
         console.log(msgArray[i]);
     }
     return msgArray;
