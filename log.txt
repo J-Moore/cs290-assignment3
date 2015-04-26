@@ -1,1 +1,57 @@
-You log goes in this  file.
+Your log goes in this  file.
+
+Start: Sat Apr 18 9:25:00 2015 -0700
+End: Sat Apr 18 10:06:54 2015 -0700
+Tasks: variables.js finished
+
+Start: Sat Apr 18 12:15:00 2015 -0700
+End: Sat Apr 18 12:57:12 2015 -0700
+Tasks: Midway through Objects.js
+
+Start: Sat Apr 18 14:20:00 2015 -0700
+End: Sat Apr 18 14:41:09 2015 -0700
+Tasks: Objects.js finished
+
+Start: Sat Apr 18 17:00:00 2015 -0700
+End: Sat Apr 18 17:40:17 2015 -0700
+Tasks: working on functions.js, mostly done
+
+Start: Sat Apr 18 18:30:00 2015 -0700
+End: Sat Apr 18 18:39:45 2015 -0700
+Tasks: functions.js complete; discovered that we are to save the date as a date object
+
+Start: Thu Apr 23 14:00:00 2015 -0700
+End: Thu Apr 23 14:27:37 2015 -0700
+Tasks: Linting Finished
+
+Start:  Thu 23 Apr 2015 17:20:00 -0700
+End: Thu 23 Apr 2015 17:31:41 -0700
+Tasks: initial files created for assignment3-2
+
+Start:  Sat 25 Apr 2015 11:30:00 -0700
+End: Sat 25 Apr 2015 12:03:50 -0700
+Tasks: Add functionality to request gists
+
+Start:  Sat 25 Apr 2015 14:00:00 -0700
+End: Sat 25 Apr 2015 15:09:42 -0700
+Tasks: relevant data from JSON return object parsed into gitList[] array
+
+Start:  Sat 25 Apr 2015 15:20:00 -0700
+End: Sat 25 Apr 2015 16:29:31 -0700
+Tasks: Displaying Gists complete
+
+Start:  Sat 25 Apr 2015 16:45:00 -0700
+End: Sat 25 Apr 2015 17:08:55 -0700
+Tasks: Beginning on favorite functionality
+
+Start:  Sat 25 Apr 2015 22:20:00 -0700
+End: Sat 25 Apr 2015 23:38:11 -0700
+Tasks: improved favorite functionality
+
+Start:  Sat 25 Apr 2015 10:10:00 -0700
+End: Sat 25 Apr 2015 12:15:42 -0700
+Tasks: favorite functionality complete, filter functionality added
+
+Start:  Sat 25 Apr 2015 12:50:00 -0700
+End: Sat 25 Apr 2015 13:18:42 -0700
+Tasks: linting done
